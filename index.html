@@ -25,10 +25,11 @@
 <!--             <p>Some words provided by Mousa about e-comm and how it's going, etc. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
             </p> -->
 
- 
-            <img src="images/sportchek.jpg" style="padding-left: 20px;" />
- 
-            <img src="images/atmosphere.jpg" style="padding-left: 20px;" />
+            <center>
+            <img src="images/sportchek.jpg" style="padding-right: 20px;" />
+
+            <img src="images/atmosphere.jpg" />
+            </center>
 <!--             <a href="video/2016.03.14 FGL - Sport Chek In Store - Virtual Department Kiosk (1920x1080, H264.mp4" data-lity>video</a> -->
 
             
@@ -46,17 +47,16 @@
         <div class="panel centre">
             <h1>In-Store E-Commerce</h1>
             
-            <h3>Virtual Department Kiosk</h3>
+<!--             <h3>Virtual Department Kiosk</h3>
             <video width="600" height="338" autoplay="autoplay" loop="true">
                 <source src="video/2016.03.14 FGL - Sport Chek In Store - Virtual Department Kiosk (1920x1080, H264.mp4" type="video/mp4">
-            </video>
+            </video> -->
 
             <h3>End Wall E-Commerce</h3>
             <video width="600" height="338" autoplay="autoplay" loop="true">
                 <source src="video/2016.03.14 FGL - Sport Chek In Store - end wall e-Commerce (1920x1080 - h264).mp4" type="video/mp4">
             </video>
             
-
 <!-- 
             <h3>Some things you can click</h3>
             <p>
@@ -127,11 +127,17 @@
 
         <script type="text/javascript">
            $("#carousel").flipster({
+                start: 0,
                 style: 'carousel',
                 spacing: -0.5,
                 nav: false,
                 buttons: false,
+                loop: true,
+                touch: true,
+                autoplay: 1000
             });
+
+
 
         </script>
     </body>
