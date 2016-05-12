@@ -16,7 +16,7 @@ body{
 .panel{
 	float: left;
 	width: 639px;
-	height: 1080px;
+	height: 800px;
 
     background-image: -ms-radial-gradient(center top, circle farthest-corner, #7A7A7A 0%, #000000 100%);
     background-image: -moz-radial-gradient(center top, circle farthest-corner, #7A7A7A 0%, #000000 100%);
@@ -30,10 +30,25 @@ body{
 .centre{  width: 640px;}
 .right{ border-left: 1px solid #333;}
 
+.bottomPanel{
+	clear: both;
+	height: 280px;
+	width: 1920px;
+	background: #000000;
+}
 
+.fourth{
+	float: left;
+	width: 480px;
+	height: 280px;
+
+
+}
 h1{ color: #fff; font-family: GalaxiePolarisCondensed-Bold; text-align: center; text-transform: uppercase;}
 h2{ color: #fff; font-family: GalaxiePolarisCondensed-Bold; text-align: center; text-transform: uppercase;}
 h3{ color: #fff; font-family: GalaxiePolarisCondensed-Bold; text-align: center; text-transform: uppercase;}
+h4{ color: #fff; font-family: GalaxiePolarisCondensed-Bold; text-align: center; text-transform: uppercase; font-size: 16px; padding: 0; margin: 0;}
+
 p{ color: #fff; font-size: 16px; line-height: 22px; font-family: arial, helvetica, sans-serif; padding: 10px 20px; }
 
 ul{ color: #fff; font-size: 16px; line-height: 22px; font-family: arial, helvetica, sans-serif; padding: 10px 20px; }

@@ -15,7 +15,86 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="lity-1.6.6/dist/lity.css">
         <link rel="stylesheet" href="jquery-flipster-1.1.2/dist/jquery.flipster.css">
-    
+        <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+        <style type="text/css">
+
+@keyframes dashoffset-seven {
+  0% {
+    stroke-dashoffset: 7px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+
+.ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: red;
+  /* Control the thikness of your lines */
+
+
+    stroke-width: 2px;
+    stroke-dasharray: 5px 2px;  
+  animation: dashoffset-seven 200ms infinite linear;
+}
+
+
+
+.ct-legend {
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 30px;
+    position: relative;
+    bottom: 370px;
+    left: 100px;
+    color: #fff;
+    width: 500px;
+  }
+   .ct-legend li {
+        position: relative;
+        padding-left: 1.3em;
+        margin-bottom: 0.8em;
+        list-style-type: none;
+        font-family: GalaxiePolarisCondensed-Light;
+    }
+
+    .ct-legend li strong{
+        font-family: GalaxiePolarisCondensed-Light;
+        text-transform: uppercase;
+    }
+
+    .ct-legend li::before {
+        height: 1em;
+        width: 1em;
+        position: absolute;
+        top: 0.1em;
+        left: 0em;
+        content: '';
+        border-radius: 1em;
+    }
+
+.ct-grid {
+      stroke: rgba(255,255,255,.5) !important;
+    }
+
+
+.ct-label{
+    font-size: 15px;
+    color: #fff;
+    fill: #fff;
+    font-family: GalaxiePolarisCondensed-Book;
+    text-transform: uppercase;
+} 
+
+.ct-label.ct-horizontal.ct-end {
+   transform: translate(-50%,0);
+   display: block;
+   text-align: center;
+}
+
+#chart1, #chart2, #chart3, #chart4{ position: relative; top: 10px; }
+        </style>
     </head>
 
     <body>
@@ -29,7 +108,8 @@
             <img src="images/sportchek.jpg" style="padding-right: 20px;" />
 
             <img src="images/atmosphere.jpg" />
-            </center>
+
+            
 <!--             <a href="video/2016.03.14 FGL - Sport Chek In Store - Virtual Department Kiosk (1920x1080, H264.mp4" data-lity>video</a> -->
 
             
@@ -69,6 +149,10 @@
 
         <div class="panel right">
             <h1>Digital Signage</h1>
+            <center>
+            <a href="images/customer-journey.png" data-lity><img src="images/customer-journey.png" width="500" /></a>
+            </center>
+            <br />
     <div id="carousel">
         <ul class="flip-items">
             <li data-flip-title="Red">
@@ -118,12 +202,31 @@
         </div>
 
 
-
+        <div class="bottomPanel">
+            <div class="fourth">
+                <h4>Visits (millions)</h4>
+                <div class="ct-chart4 ct-perfect-fourth" id="chart4"></div>
+                               
+            </div>
+            <div class="fourth">
+                <h4>Orders (thousands)</h4>
+                <div class="ct-chart2 ct-perfect-fourth" id="chart2"></div>
+            </div>
+            <div class="fourth">
+                <h4>Ecomm Demand Sales (millions)</h4>
+                <div class="ct-chart3 ct-perfect-fourth" id="chart3"></div>
+            </div>
+            <div class="fourth">
+                <h4>Flagship/Hero Revenue (millions)</h4>
+                <div class="ct-chart1 ct-perfect-fourth" id="chart1"></div> 
+            </div>
+        </div>
 
         
         <script src="js/jquery.js"></script>
         <script src="lity-1.6.6/dist/lity.js"></script>
         <script type="text/javascript" src="jquery-flipster-1.1.2/dist/jquery.flipster.min.js"></script>
+        <script src="bower_components/chartist/dist/chartist.min.js"></script> 
 
         <script type="text/javascript">
            $("#carousel").flipster({
@@ -136,10 +239,58 @@
                 touch: true,
                 autoplay: 1000
             });
-
-
-
         </script>
+
+        <script type="text/javascript">
+            var data1 = {
+              // A labels array that can contain any sort of values
+              labels: ['`12', '`13', '`14', '`15'],
+              // Our series array that contains series objects or in this case series data arrays
+              series: [
+                [0, 4.16, 45.78, 63.82]
+              ]
+            };     
+
+            var data2 = {
+              // A labels array that can contain any sort of values
+              labels: ['`12', '`13', '`14', '`15'],
+              // Our series array that contains series objects or in this case series data arrays
+              series: [
+                [61, 109, 192, 311]
+              ]
+            };              
+
+            var data3 = {
+              // A labels array that can contain any sort of values
+              labels: ['`12', '`13', '`14', '`15'],
+              // Our series array that contains series objects or in this case series data arrays
+              series: [
+                [8.67, 15.20, 26.60, 36.70]
+              ]
+            };  
+
+            var data4 = {
+              // A labels array that can contain any sort of values
+              labels: ['`12', '`13', '`14', '`15'],
+              // Our series array that contains series objects or in this case series data arrays
+              series: [
+                [16, 22, 31, 36]
+              ]
+            };            
+
+           var options = {
+              width: 450,
+              height: 250,
+              fullWidth: true,
+            };       
+
+            new Chartist.Line('.ct-chart1', data1, options);
+            new Chartist.Line('.ct-chart2', data2, options);
+            new Chartist.Line('.ct-chart3', data3, options);
+            new Chartist.Line('.ct-chart4', data4, options);
+        </script>
+
+           
     </body>
 
 </html>
