@@ -194,9 +194,7 @@
             <li data-flip-title="Bright Sun" data-flip-category="Yellows">
                 <img src="images/13.jpg">
             </li>
-            <li data-flip-title="Mikado" data-flip-category="Yellows">
-                <img src="images/14.jpg">
-            </li>
+           
         </ul>
     </div>
         </div>
@@ -227,6 +225,7 @@
         <script src="lity-1.6.6/dist/lity.js"></script>
         <script type="text/javascript" src="jquery-flipster-1.1.2/dist/jquery.flipster.min.js"></script>
         <script src="bower_components/chartist/dist/chartist.min.js"></script> 
+        <script type="text/javascript" src="chartist-plugin-pointlabels-0.0.4/src/scripts/chartist-plugin-pointlabels.js"></script>
 
         <script type="text/javascript">
            $("#carousel").flipster({
@@ -237,7 +236,7 @@
                 buttons: false,
                 loop: true,
                 touch: true,
-                autoplay: 1000
+                autoplay: 2000
             });
         </script>
 
@@ -282,7 +281,13 @@
               width: 450,
               height: 250,
               fullWidth: true,
+              plugins: [
+                           Chartist.plugins.ctPointLabels({
+                             textAnchor: 'middle'
+                           })
+                         ]
             };       
+
 
             new Chartist.Line('.ct-chart1', data1, options);
             new Chartist.Line('.ct-chart2', data2, options);
